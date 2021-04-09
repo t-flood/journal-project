@@ -16,6 +16,11 @@ const entriesReducer = (state = initialState, action) => {
         loading: false,
         entries: action.entries,
       };
+    case "ADD_ENTRY":
+      return {
+        ...state,
+        entries: [...state.entries, action.entry],
+      };
     default:
       return state;
   }

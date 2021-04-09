@@ -15,6 +15,9 @@ class Nav extends Component {
           <li>
             <Link to="/entries">Journal Entries</Link>
           </li>
+          <li>
+            <Link to="/entries/new">New Journal Entry</Link>
+          </li>
         </ul>
       </div>
     );

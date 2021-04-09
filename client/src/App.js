@@ -8,6 +8,7 @@ import Home from "./components/Home";
 import ErrorPage from "./components/ErrorPage";
 import About from "./components/About";
 import Index from "./components/Index";
+import Form from "./components/Form";
 
 import "./App.css";
 
@@ -27,6 +28,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/entries" component={Index} />
+          <Route exact path="/entries/new" component={Form} />
           <Route component={ErrorPage} />
         </Switch>
         <Footer />
