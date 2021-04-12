@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { deleteEntry } from "../actions";
 import Entry from "./Entry";
 
 class Index extends Component {
@@ -24,7 +25,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    deleteEntry: (entry) => dispatch({ type: "DELETE_ENTRY", payload: entry }),
+    deleteEntry: (entry) => dispatch(deleteEntry(entry)),
   };
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(Index);

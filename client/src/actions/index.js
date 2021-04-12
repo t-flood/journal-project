@@ -24,3 +24,17 @@ export const addEntry = (entry, history) => {
       });
   };
 };
+
+export const deleteEntry = (entry) => {
+  return async (dispatch) => {
+    await fetch(`http://localhost:3001/entries/${entry.id}`, {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+
+    dispatch({ type: "DELETE_ENTRY", payload: entry });
+  };
+};
