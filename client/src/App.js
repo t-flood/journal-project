@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { getEntries } from "./actions";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
@@ -11,14 +9,7 @@ import Index from "./components/Index";
 import Form from "./components/Form";
 
 class App extends Component {
-  componentDidMount() {
-    this.props.getEntries();
-  }
-
   render() {
-    if (this.props.loading) {
-      return <h3>Loading...</h3>;
-    }
     return (
       <Router>
         <Nav />
@@ -35,10 +26,4 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    loading: state.loading,
-  };
-};
-
-export default connect(mapStateToProps, { getEntries })(App);
+export default App;
