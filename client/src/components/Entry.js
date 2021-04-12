@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Button from "react-bootstrap/Button";
 
 class Entry extends Component {
   render() {
@@ -7,7 +8,7 @@ class Entry extends Component {
       <div>
         <h3>{title}</h3>
         <p>{content}</p>
-        <button onClick={onDelete}>delete</button>
+        <Button onClick={onDelete}>Delete</Button>
       </div>
     );
   }

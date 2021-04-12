@@ -10,8 +10,6 @@ import About from "./components/About";
 import Index from "./components/Index";
 import Form from "./components/Form";
 
-import "./App.css";
-
 class App extends Component {
   componentDidMount() {
     this.props.getEntries();
