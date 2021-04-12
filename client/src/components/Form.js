@@ -52,12 +52,10 @@ class Form extends Component {
               value={this.state.content}
               onChange={this.handleChange}
             ></textarea>
-            <div class="mb-3">
-              <input
-                type="submit"
-                class="btn btn-primary"
-                value="Create Entry"
-              />
+            <div>
+              <button type="submit" class="btn btn-primary">
+                Create Entry
+              </button>
             </div>
           </div>
         </form>
