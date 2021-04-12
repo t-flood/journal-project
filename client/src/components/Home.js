@@ -9,7 +9,7 @@ class Home extends Component {
           <h1>Journal</h1>
           <p>
             This is my personal journal app. You can use it too! Click the link.{" "}
-            <Link to="https://github.com/t-flood/journal-project">Github</Link>
+            <a href="https://github.com/t-flood/journal-project">Github</a>
           </p>
         </div>
       </div>
