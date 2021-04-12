@@ -2,10 +2,15 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Entry from "./Entry";
 
-class index extends Component {
+class Index extends Component {
   render() {
     const entries = this.props.entries.map((entry, i) => (
-      <Entry key={i} title={entry.title} content={entry.content} />
+      <Entry
+        key={i}
+        title={entry.title}
+        content={entry.content}
+        onDelete={() => this.props.deleteEntry(entry)}
+      />
     ));
     return <div>{entries}</div>;
   }
@@ -16,4 +21,10 @@ const mapStateToProps = (state) => {
     entries: state.entries,
   };
 };
-export default connect(mapStateToProps)(index);
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteEntry: (entry) => dispatch({ type: "DELETE_ENTRY", payload: entry }),
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Index);

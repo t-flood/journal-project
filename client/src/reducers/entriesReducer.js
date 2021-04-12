@@ -21,6 +21,12 @@ const entriesReducer = (state = initialState, action) => {
         ...state,
         entries: [...state.entries, action.entry],
       };
+    case "DELETE_ENTRY":
+      return {
+        entries: state.entries.filter(
+          (entry) => entry.id !== action.payload.id
+        ),
+      };
     default:
       return state;
   }
