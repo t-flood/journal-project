@@ -1,10 +1,17 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Home extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Journal</h1>
+        <div class="col-md-4 mb-4">
+          <h1>Journal</h1>
+          <p>
+            This is my personal journal app. You can use it too! Click the link.{" "}
+            <Link to="https://github.com/t-flood/journal-project">Github</Link>
+          </p>
+        </div>
       </div>
     );
   }

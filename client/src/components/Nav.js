@@ -5,18 +5,26 @@ class Nav extends Component {
   render() {
     return (
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link active">
+              <Link to="/">Home</Link>
+            </a>
           </li>
-          <li>
-            <Link to="/about">About</Link>
+          <li class="nav-item">
+            <a class="nav-link active">
+              <Link to="/entries/new">New Entry</Link>
+            </a>
           </li>
-          <li>
-            <Link to="/entries">Journal Entries</Link>
+          <li class="nav-item">
+            <a class="nav-link active">
+              <Link to="/entries">Entries</Link>
+            </a>
           </li>
-          <li>
-            <Link to="/entries/new">New Journal Entry</Link>
+          <li class="nav-item">
+            <a class="nav-link active">
+              <Link to="/about">About</Link>
+            </a>
           </li>
         </ul>
       </div>

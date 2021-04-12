@@ -12,15 +12,20 @@ class Index extends Component {
     if (this.props.loading) {
       return <h3>Loading...</h3>;
     }
-    const entries = this.props.entries.map((entry, i) => (
-      <Entry
-        key={i}
-        title={entry.title}
-        content={entry.content}
-        onDelete={() => this.props.deleteEntry(entry)}
-      />
-    ));
-    return <div>{entries}</div>;
+
+    return (
+      <div className="row">
+        {this.props.entries.map((entry) => (
+          <div key={entry.id} className="col-md-4 mb-4">
+            <Entry
+              title={entry.title}
+              content={entry.content}
+              onDelete={() => this.props.deleteEntry(entry)}
+            />
+          </div>
+        ))}
+      </div>
+    );
   }
 }
 

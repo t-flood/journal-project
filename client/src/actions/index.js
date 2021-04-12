@@ -7,7 +7,7 @@ export const getEntries = () => {
   };
 };
 
-export const addEntry = (entry, history) => {
+export const addEntry = (attributes, history) => {
   return async (dispatch) => {
     const response = await fetch("http://localhost:3001/entries", {
       method: "POST",
@@ -15,7 +15,7 @@ export const addEntry = (entry, history) => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ entry }),
+      body: JSON.stringify({ entry: attributes }),
     });
 
     const entry = await response.json();
