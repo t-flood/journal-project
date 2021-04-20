@@ -4,26 +4,26 @@ import { Link } from "react-router-dom";
 class Nav extends Component {
   render() {
     return (
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div>
-          <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link active">
+          <ul className="nav">
+            <li className="nav-item">
+              <a className="nav-link active">
                 <Link to="/">Home</Link>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active">
+            <li className="nav-item">
+              <a className="nav-link active">
                 <Link to="/entries/new">New Entry</Link>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active">
+            <li className="nav-item">
+              <a className="nav-link active">
                 <Link to="/entries">Entries</Link>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active">
+            <li className="nav-item">
+              <a className="nav-link active">
                 <Link to="/about">About</Link>
               </a>
             </li>

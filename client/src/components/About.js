@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class About extends Component {
   render() {
     return (
-      <div class="col-md-4 mb-4">
+      <div className="col-md-4 mb-4">
         <h3>About</h3>
         <p>
           This is a personal journal in the form of a microblog. For all the
