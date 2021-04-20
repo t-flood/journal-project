@@ -8,24 +8,24 @@ class Nav extends Component {
         <div>
           <ul className="nav">
             <li className="nav-item">
-              <a className="nav-link active">
+              <button type="button" className="btn btn-link">
                 <Link to="/">Home</Link>
-              </a>
+              </button>
             </li>
             <li className="nav-item">
-              <a className="nav-link active">
+              <button type="button" className="btn btn-link">
                 <Link to="/entries/new">New Entry</Link>
-              </a>
+              </button>
             </li>
             <li className="nav-item">
-              <a className="nav-link active">
+              <button type="button" className="btn btn-link">
                 <Link to="/entries">Entries</Link>
-              </a>
+              </button>
             </li>
             <li className="nav-item">
-              <a className="nav-link active">
+              <button type="button" className="btn btn-link">
                 <Link to="/about">About</Link>
-              </a>
+              </button>
             </li>
           </ul>
         </div>
