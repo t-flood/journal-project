@@ -4,7 +4,7 @@ class Home extends Component {
   render() {
     return (
       <div className="App">
-        <div class="col-md-4 mb-4">
+        <div className="col-md-4 mb-4">
           <h1>Journal</h1>
           <p>
             This is my personal journal app. You can use it too! Click the link.{" "}
