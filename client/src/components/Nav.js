@@ -6,7 +6,7 @@ class Nav extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <Incrementer />
+        <Incrementer onChangeIncrementBy={this.props.onChangeIncrementBy} />
         <div>
           <ul className="nav">
             <li className="nav-item">

@@ -9,8 +9,8 @@ export class Incrementer extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Increment by " + this.state.value);
-    // <Likes increment={this.state.increment} />;
+    const incrementBy = parseInt(this.state.value, 10);
+    this.props.onChangeIncrementBy(incrementBy);
   };
 
   render() {

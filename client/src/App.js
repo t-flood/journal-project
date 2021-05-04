@@ -11,6 +11,11 @@ import Form from "./components/Form";
 class App extends Component {
   state = {
     likes: {},
+    incrementBy: 1,
+  };
+
+  handleChangeIncrementBy = (incrementBy) => {
+    this.setState({ incrementBy });
   };
 
   handleLike = (entryId) => {
@@ -18,14 +23,14 @@ class App extends Component {
     const entryLikes = likes[entryId] || 0;
 
     this.setState({
-      likes: { ...likes, [entryId]: entryLikes + 1 },
+      likes: { ...likes, [entryId]: entryLikes + this.state.incrementBy },
     });
   };
 
   render() {
     return (
       <Router>
-        <Nav />
+        <Nav onChangeIncrementBy={this.handleChangeIncrementBy} />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
