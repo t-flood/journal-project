@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { Incrementer } from "./Incrementer";
 
 class Nav extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <Incrementer />
         <div>
           <ul className="nav">
             <li className="nav-item">

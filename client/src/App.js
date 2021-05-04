@@ -9,6 +9,19 @@ import Index from "./components/Index";
 import Form from "./components/Form";
 
 class App extends Component {
+  state = {
+    likes: {},
+  };
+
+  handleLike = (entryId) => {
+    const likes = this.state.likes;
+    const entryLikes = likes[entryId] || 0;
+
+    this.setState({
+      likes: { ...likes, [entryId]: entryLikes + 1 },
+    });
+  };
+
   render() {
     return (
       <Router>
@@ -16,7 +29,9 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/entries" component={Index} />
+          <Route exact path="/entries">
+            <Index likes={this.state.likes} onLike={this.handleLike} />
+          </Route>
           <Route exact path="/entries/new" component={Form} />
           <Route component={ErrorPage} />
         </Switch>

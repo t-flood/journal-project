@@ -1,7 +1,7 @@
 export const getEntries = () => {
   return async (dispatch) => {
     dispatch({ type: "LOADING" });
-    const response = await fetch("http://localhost:3001/entries");
+    const response = await fetch("/entries");
     const entries = await response.json();
     dispatch({ type: "SET_ENTRIES", entries });
   };
@@ -9,7 +9,7 @@ export const getEntries = () => {
 
 export const addEntry = (attributes, history) => {
   return async (dispatch) => {
-    const response = await fetch("http://localhost:3001/entries", {
+    const response = await fetch("/entries", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -26,7 +26,7 @@ export const addEntry = (attributes, history) => {
 
 export const deleteEntry = (entry) => {
   return async (dispatch) => {
-    await fetch(`http://localhost:3001/entries/${entry.id}`, {
+    await fetch(`/entries/${entry.id}`, {
       method: "DELETE",
       headers: {
         Accept: "application/json",
