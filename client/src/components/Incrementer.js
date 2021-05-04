@@ -1,20 +1,17 @@
 import React, { Component } from "react";
 
 export class Incrementer extends Component {
-  state = { increment: 0 };
+  state = { value: "" };
 
-  handleChange = this.handleChange.bind(this);
-  handleSubmit = this.handleSubmit.bind(this);
+  handleChange = (event) => {
+    this.setState({ value: event.target.value });
+  };
 
-  handleChange(event) {
-    this.setState({ increment: event.target.value });
-  }
-
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Increment by " + this.state.increment);
+    console.log("Increment by " + this.state.value);
     // <Likes increment={this.state.increment} />;
-  }
+  };
 
   render() {
     return (
@@ -24,7 +21,7 @@ export class Incrementer extends Component {
             Increment:
             <input
               type="number"
-              value={this.state.increment}
+              value={this.state.value}
               onChange={this.handleChange}
             />
           </label>
