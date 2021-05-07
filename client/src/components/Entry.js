@@ -1,8 +1,16 @@
 import React, { Component } from "react";
 
 class Entry extends Component {
+  state = {
+    likes: 0,
+  };
+
+  handleLike = (event) => {
+    this.setState({ likes: this.state.likes + this.props.incrementBy });
+  };
+
   render() {
-    const { title, content, onDelete, likes, onLike } = this.props;
+    const { title, content, onDelete, likes, incrementBy } = this.props;
 
     return (
       <div className="card">
@@ -12,8 +20,8 @@ class Entry extends Component {
           <button className="btn btn-danger" onClick={onDelete}>
             Delete
           </button>
-          <button className="btn btn-info" onClick={onLike}>
-            {likes} Likes
+          <button className="btn btn-info" onClick={this.handleLike}>
+            {this.state.likes} Likes
           </button>
         </div>
       </div>

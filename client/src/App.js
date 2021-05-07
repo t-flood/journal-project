@@ -10,7 +10,7 @@ import Form from "./components/Form";
 
 class App extends Component {
   state = {
-    likes: {},
+    // likes: {},
     incrementBy: 1,
   };
 
@@ -18,14 +18,14 @@ class App extends Component {
     this.setState({ incrementBy });
   };
 
-  handleLike = (entryId) => {
-    const likes = this.state.likes;
-    const entryLikes = likes[entryId] || 0;
+  // handleLike = (entryId) => {
+  //   const likes = this.state.likes;
+  //   const entryLikes = likes[entryId] || 0;
 
-    this.setState({
-      likes: { ...likes, [entryId]: entryLikes + this.state.incrementBy },
-    });
-  };
+  //   this.setState({
+  //     likes: { ...likes, [entryId]: entryLikes + this.state.incrementBy },
+  //   });
+  // };
 
   render() {
     return (
@@ -35,7 +35,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/entries">
-            <Index likes={this.state.likes} onLike={this.handleLike} />
+            <Index incrementBy={this.state.incrementBy} />
           </Route>
           <Route exact path="/entries/new" component={Form} />
           <Route component={ErrorPage} />
