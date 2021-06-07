@@ -18,7 +18,7 @@ export class Incrementer extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <label>
-            Increment:
+            Like incrementer for multi-liking:
             <input
               type="number"
               value={this.state.value}
