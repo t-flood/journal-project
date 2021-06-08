@@ -6,6 +6,8 @@ class Form extends Component {
   state = {
     title: "",
     content: "",
+    exercise: false,
+    read: false,
   };
 
   handleChange = (e) => {

@@ -17,6 +17,30 @@ class Entry extends Component {
         <div className="card-body">
           <h5 className="card-title">{title}</h5>
           <p className="card-text mb-4">{content}</p>
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDisabled"
+              disabled
+            />
+            <label className="form-check-label" htmlFor="flexCheckDisabled">
+              Exercise
+            </label>
+          </div>
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDisabled"
+              disabled
+            />
+            <label className="form-check-label" htmlFor="flexCheckDisabled">
+              Read
+            </label>
+          </div>
           <button className="btn btn-danger" onClick={onDelete}>
             Delete
           </button>
