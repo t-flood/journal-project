@@ -52,6 +52,28 @@ class Form extends Component {
               value={this.state.content}
               onChange={this.handleChange}
             ></textarea>
+            <div className="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+              />
+              <label className="form-check-label" for="flexCheckDefault">
+                Exercise
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+              />
+              <label className="form-check-label" for="flexCheckDefault">
+                Read
+              </label>
+            </div>
             <div>
               <button type="submit" className="btn btn-primary">
                 Create Entry
