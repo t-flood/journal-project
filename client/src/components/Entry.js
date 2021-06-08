@@ -6,11 +6,11 @@ class Entry extends Component {
   };
 
   handleLike = (event) => {
-    this.setState({ likes: this.state.likes + this.props.incrementBy });
+    this.setState({ likes: this.state.likes + 1 });
   };
 
   render() {
-    const { title, content, onDelete, likes, incrementBy } = this.props;
+    const { title, content, onDelete, likes } = this.props;
 
     return (
       <div className="card">
