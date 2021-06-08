@@ -20,7 +20,6 @@ class Index extends Component {
             <Entry
               title={entry.title}
               content={entry.content}
-              // likes={this.props.likes[entry.id] || 0}
               onDelete={() => this.props.deleteEntry(entry)}
             />
           </div>

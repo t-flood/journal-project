@@ -9,24 +9,6 @@ import Index from "./components/Index";
 import Form from "./components/Form";
 
 class App extends Component {
-  // state = {
-  //   // likes: {},
-  //   incrementBy: 1,
-  // };
-
-  // handleChangeIncrementBy = (incrementBy) => {
-  //   this.setState({ incrementBy });
-  // };
-
-  // handleLike = (entryId) => {
-  //   const likes = this.state.likes;
-  //   const entryLikes = likes[entryId] || 0;
-
-  //   this.setState({
-  //     likes: { ...likes, [entryId]: entryLikes + this.state.incrementBy },
-  //   });
-  // };
-
   render() {
     return (
       <Router>

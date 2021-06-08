@@ -10,7 +10,7 @@ class Entry extends Component {
   };
 
   render() {
-    const { title, content, onDelete, likes } = this.props;
+    const { title, content, onDelete } = this.props;
 
     return (
       <div className="card">
