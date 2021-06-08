@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addEntry } from "../actions";
+import MyDTPicker from "./MyDTPicker";
 
 class Form extends Component {
   state = {
@@ -8,6 +9,7 @@ class Form extends Component {
     content: "",
     didExercise: false,
     didRead: false,
+    date: "",
   };
 
   handleInputChange = (e) => {
@@ -28,6 +30,7 @@ class Form extends Component {
   render() {
     return (
       <div>
+        <MyDTPicker />
         <div className="col-md-4 mb-4">
           <h3>New Journal Entry</h3>
         </div>
