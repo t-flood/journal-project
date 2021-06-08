@@ -6,13 +6,17 @@ class Form extends Component {
   state = {
     title: "",
     content: "",
-    exercise: false,
-    read: false,
+    didExercise: false,
+    didRead: false,
   };
 
-  handleChange = (e) => {
+  handleInputChange = (e) => {
+    const target = e.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    const name = target.name;
+
     this.setState({
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   };
 
@@ -38,7 +42,7 @@ class Form extends Component {
               id="title"
               name="title"
               value={this.state.title}
-              onChange={this.handleChange}
+              onChange={this.handleInputChange}
             />
           </div>
           <div className="col-md-4 mb-4">
@@ -52,14 +56,16 @@ class Form extends Component {
               className="form-control"
               name="content"
               value={this.state.content}
-              onChange={this.handleChange}
+              onChange={this.handleInputChange}
             ></textarea>
             <div className="form-check">
               <input
                 className="form-check-input"
                 type="checkbox"
-                value=""
-                id="flexCheckDefault"
+                name="didExercise"
+                checked={this.state.didExercise}
+                id="didExerciseCheck"
+                onChange={this.handleInputChange}
               />
               <label className="form-check-label" htmlFor="flexCheckDefault">
                 Exercise
@@ -69,8 +75,10 @@ class Form extends Component {
               <input
                 className="form-check-input"
                 type="checkbox"
-                value=""
-                id="flexCheckDefault"
+                name="didRead"
+                checked={this.state.didRead}
+                id="didReadCheck"
+                onChange={this.handleInputChange}
               />
               <label className="form-check-label" htmlFor="flexCheckDefault">
                 Read
