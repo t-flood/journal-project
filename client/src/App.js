@@ -9,14 +9,14 @@ import Index from "./components/Index";
 import Form from "./components/Form";
 
 class App extends Component {
-  state = {
-    // likes: {},
-    incrementBy: 1,
-  };
+  // state = {
+  //   // likes: {},
+  //   incrementBy: 1,
+  // };
 
-  handleChangeIncrementBy = (incrementBy) => {
-    this.setState({ incrementBy });
-  };
+  // handleChangeIncrementBy = (incrementBy) => {
+  //   this.setState({ incrementBy });
+  // };
 
   // handleLike = (entryId) => {
   //   const likes = this.state.likes;
@@ -30,12 +30,12 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Nav onChangeIncrementBy={this.handleChangeIncrementBy} />
+        <Nav />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/entries">
-            <Index incrementBy={this.state.incrementBy} />
+            <Index />
           </Route>
           <Route exact path="/entries/new" component={Form} />
           <Route component={ErrorPage} />
