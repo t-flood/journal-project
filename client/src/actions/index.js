@@ -8,6 +8,7 @@ export const getEntries = () => {
 };
 
 export const addEntry = (attributes, history) => {
+  console.log(attributes.didExercise);
   return async (dispatch) => {
     const response = await fetch("/entries", {
       method: "POST",
@@ -15,10 +16,15 @@ export const addEntry = (attributes, history) => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ entry: attributes }),
+      body: JSON.stringify({
+        title: attributes.title,
+        content: attributes.content,
+        did_exercise: attributes.didExercise,
+      }),
     });
 
     const entry = await response.json();
+    console.log(entry);
     dispatch({ type: "ADD_ENTRY", entry });
     history.push("/entries");
   };
