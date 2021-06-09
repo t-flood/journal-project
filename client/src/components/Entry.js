@@ -10,7 +10,7 @@ class Entry extends Component {
   };
 
   render() {
-    const { title, content, onDelete } = this.props;
+    const { title, content, onDelete, didExercise } = this.props;
 
     return (
       <div className="card">
@@ -23,6 +23,7 @@ class Entry extends Component {
               type="checkbox"
               value=""
               id="flexCheckDisabled"
+              checked={didExercise ? "checked" : ""}
               disabled
             />
             <label className="form-check-label" htmlFor="flexCheckDisabled">
