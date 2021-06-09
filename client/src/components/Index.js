@@ -21,6 +21,7 @@ class Index extends Component {
               title={entry.title}
               content={entry.content}
               didExercise={entry.did_exercise}
+              didRead={entry.did_read}
               onDelete={() => this.props.deleteEntry(entry)}
             />
           </div>
