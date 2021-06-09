@@ -20,6 +20,7 @@ export const addEntry = (attributes, history) => {
         title: attributes.title,
         content: attributes.content,
         did_exercise: attributes.didExercise,
+        did_read: attributes.didRead,
       }),
     });
 
