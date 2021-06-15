@@ -29,8 +29,24 @@ export const addEntry = (attributes, history) => {
   };
 };
 
-//create an addLike action that POSTs to an entries likes
+//create an addLike action that PUTs to a specific entries likes
 //dispatch an action ADD_LIKE
+
+// export const addLike = (attributes, history) => {
+//     return async (dispatch) => {
+//       const response = await fetch(`/entries/$entry.id}`), {
+//         method: 'PATCH',
+//         headers: {
+//             Accept: "application/json",
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify({
+//           likes:attributes.likes
+//         }),
+//         const like = await response.json();
+//         dispatch({ type: "ADD_ENTRY", like });
+//         history.push(`/entries/$entry.id`);
+// }
 
 export const deleteEntry = (entry) => {
   return async (dispatch) => {

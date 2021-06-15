@@ -25,6 +25,7 @@ class Form extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.addEntry(this.state, this.props.history);
+    console.log(this.state);
   };
 
   render() {
