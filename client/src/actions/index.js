@@ -29,6 +29,9 @@ export const addEntry = (attributes, history) => {
   };
 };
 
+//create an addLike action that POSTs to an entries likes
+//dispatch an action ADD_LIKE
+
 export const deleteEntry = (entry) => {
   return async (dispatch) => {
     await fetch(`/entries/${entry.id}`, {

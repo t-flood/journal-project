@@ -28,6 +28,7 @@ const entriesReducer = (state = initialState, action) => {
           (entry) => entry.id !== action.payload.id
         ),
       };
+    // case "ADD_LIKE"
     default:
       return state;
   }
