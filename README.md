@@ -1,6 +1,6 @@
 # Description
 
-This personal development app alows a user to record a journal entry and mark if they've completed two tasks: reading, and exercise.
+This personal development app allows a user to record a journal entry and mark if they've completed two tasks: reading, and exercise.
 
 
 # Getting Started
