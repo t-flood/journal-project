@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_09_185805) do
+ActiveRecord::Schema.define(version: 2021_06_16_163522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2021_06_09_185805) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "did_exercise"
     t.boolean "did_read"
+    t.integer "likes"
   end
 
 end

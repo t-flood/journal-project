@@ -29,10 +29,9 @@ export const addEntry = (attributes, history) => {
   };
 };
 
-//create an addLike action that PUTs to a specific entries likes
-//dispatch an action ADD_LIKE
+//create an addLike action that PATCHs to a specific entries likes
 
-// export const addLike = (attributes, history) => {
+// export const addLike = (attributes) => {
 //     return async (dispatch) => {
 //       const response = await fetch(`/entries/$entry.id}`), {
 //         method: 'PATCH',
@@ -41,11 +40,10 @@ export const addEntry = (attributes, history) => {
 //           "Content-Type": "application/json",
 //         },
 //         body: JSON.stringify({
-//           likes:attributes.likes
+//           likes: attributes.likes
 //         }),
 //         const like = await response.json();
 //         dispatch({ type: "ADD_ENTRY", like });
-//         history.push(`/entries/$entry.id`);
 // }
 
 export const deleteEntry = (entry) => {

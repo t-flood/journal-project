@@ -8,7 +8,6 @@ class Entry extends Component {
   handleLike = (event) => {
     this.setState({ likes: this.state.likes + 1 });
     //call addLike action
-    console.log(this.props);
   };
 
   render() {
