@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
 class Entry extends Component {
+  //event handler for edit
+  //pass props to form component
+
   render() {
     const { entry, onDelete, onLike } = this.props;
 
@@ -35,6 +38,7 @@ class Entry extends Component {
               Read
             </label>
           </div>
+          <button className="btn btn-warning">Edit</button>
           <button className="btn btn-danger" onClick={onDelete}>
             Delete
           </button>

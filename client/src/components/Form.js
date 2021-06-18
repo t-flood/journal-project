@@ -1,15 +1,10 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { addEntry } from "../actions";
-import MyDTPicker from "./MyDTPicker";
 
-class Form extends Component {
-  state = {
-    title: "",
-    content: "",
-    didExercise: false,
-    didRead: false,
-  };
+export default class Form extends Component {
+  constructor(props) {
+    super(props);
+    this.state = props.initialValues;
+  }
 
   handleInputChange = (e) => {
     const target = e.target;
@@ -23,15 +18,14 @@ class Form extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addEntry(this.state, this.props.history);
+    this.props.onSubmit(this.state);
   };
 
   render() {
     return (
       <div>
-        <MyDTPicker />
         <div className="col-md-4 mb-4">
-          <h3>New Journal Entry</h3>
+          <h3>{this.props.title}</h3>
         </div>
         <form onSubmit={this.handleSubmit}>
           <div className="col-md-4 mb-4">
@@ -97,5 +91,3 @@ class Form extends Component {
     );
   }
 }
-
-export default connect(null, { addEntry })(Form);

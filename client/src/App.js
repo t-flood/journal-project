@@ -6,7 +6,8 @@ import Home from "./components/Home";
 import ErrorPage from "./components/ErrorPage";
 import About from "./components/About";
 import Index from "./components/Index";
-import Form from "./components/Form";
+import NewEntry from "./components/NewEntry";
+import EditEntry from "./components/EditEntry";
 
 class App extends Component {
   render() {
@@ -19,7 +20,8 @@ class App extends Component {
           <Route exact path="/entries">
             <Index />
           </Route>
-          <Route exact path="/entries/new" component={Form} />
+          <Route exact path="/entries/new" component={NewEntry} />
+          <Route exact path="/entries/:id/edit" component={EditEntry} />
           <Route component={ErrorPage} />
         </Switch>
         <Footer />
