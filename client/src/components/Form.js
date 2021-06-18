@@ -69,7 +69,7 @@ class Form extends Component {
                 id="didExerciseCheck"
                 onChange={this.handleInputChange}
               />
-              <label className="form-check-label" htmlFor="flexCheckDefault">
+              <label className="form-check-label" htmlFor="didExerciseCheck">
                 Exercise
               </label>
             </div>
@@ -82,7 +82,7 @@ class Form extends Component {
                 id="didReadCheck"
                 onChange={this.handleInputChange}
               />
-              <label className="form-check-label" htmlFor="flexCheckDefault">
+              <label className="form-check-label" htmlFor="didReadCheck">
                 Read
               </label>
             </div>

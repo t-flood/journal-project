@@ -14,11 +14,11 @@ class Entry extends Component {
               className="form-check-input"
               type="checkbox"
               value=""
-              id="flexCheckDisabled"
+              id="did-exercise"
               checked={entry.did_exercise ? "checked" : ""}
               disabled
             />
-            <label className="form-check-label" htmlFor="flexCheckDisabled">
+            <label className="form-check-label" htmlFor="did-exercise">
               Exercise
             </label>
           </div>
@@ -27,11 +27,11 @@ class Entry extends Component {
               className="form-check-input"
               type="checkbox"
               value=""
-              id="flexCheckDisabled"
+              id="did-read"
               checked={entry.did_read ? "checked" : ""}
               disabled
             />
-            <label className="form-check-label" htmlFor="flexCheckDisabled">
+            <label className="form-check-label" htmlFor="did-read">
               Read
             </label>
           </div>
