@@ -21,6 +21,14 @@ const entriesReducer = (state = initialState, action) => {
         ...state,
         entries: [...state.entries, action.entry],
       };
+    // an action for updating an entry?
+    case "UPDATE_ENTRY":
+      return {
+        ...state,
+        entries: state.entries.map((entry) =>
+          entry.id === action.entry.id ? action.entry : entry
+        ),
+      };
     case "DELETE_ENTRY":
       return {
         ...state,

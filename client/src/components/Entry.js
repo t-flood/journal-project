@@ -1,30 +1,21 @@
 import React, { Component } from "react";
 
 class Entry extends Component {
-  state = {
-    likes: 0,
-  };
-
-  handleLike = (event) => {
-    this.setState({ likes: this.state.likes + 1 });
-    //call addLike action
-  };
-
   render() {
-    const { title, content, onDelete, didExercise, didRead } = this.props;
+    const { entry, onDelete, onLike } = this.props;
 
     return (
       <div className="card">
         <div className="card-body">
-          <h5 className="card-title">{title}</h5>
-          <p className="card-text mb-4">{content}</p>
+          <h5 className="card-title">{entry.title}</h5>
+          <p className="card-text mb-4">{entry.content}</p>
           <div className="form-check">
             <input
               className="form-check-input"
               type="checkbox"
               value=""
               id="flexCheckDisabled"
-              checked={didExercise ? "checked" : ""}
+              checked={entry.did_exercise ? "checked" : ""}
               disabled
             />
             <label className="form-check-label" htmlFor="flexCheckDisabled">
@@ -37,7 +28,7 @@ class Entry extends Component {
               type="checkbox"
               value=""
               id="flexCheckDisabled"
-              checked={didRead ? "checked" : ""}
+              checked={entry.did_read ? "checked" : ""}
               disabled
             />
             <label className="form-check-label" htmlFor="flexCheckDisabled">
@@ -47,8 +38,8 @@ class Entry extends Component {
           <button className="btn btn-danger" onClick={onDelete}>
             Delete
           </button>
-          <button className="btn btn-info" onClick={this.handleLike}>
-            {this.state.likes} Likes
+          <button className="btn btn-info" onClick={onLike}>
+            {entry.likes} Likes
           </button>
         </div>
       </div>

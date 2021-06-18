@@ -29,22 +29,20 @@ export const addEntry = (attributes, history) => {
   };
 };
 
-//create an addLike action that PATCHs to a specific entries likes
-
-// export const addLike = (attributes) => {
-//     return async (dispatch) => {
-//       const response = await fetch(`/entries/$entry.id}`), {
-//         method: 'PATCH',
-//         headers: {
-//             Accept: "application/json",
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify({
-//           likes: attributes.likes
-//         }),
-//         const like = await response.json();
-//         dispatch({ type: "ADD_ENTRY", like });
-// }
+export const updateEntry = ({ id, ...attributes }) => {
+  return async (dispatch) => {
+    const response = await fetch(`/entries/${id}`, {
+      method: "PATCH",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(attributes),
+    });
+    const entry = await response.json();
+    dispatch({ type: "UPDATE_ENTRY", entry });
+  };
+};
 
 export const deleteEntry = (entry) => {
   return async (dispatch) => {

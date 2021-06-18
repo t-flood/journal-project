@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_06_16_163522) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "did_exercise"
     t.boolean "did_read"
-    t.integer "likes"
+    t.integer "likes", default: 0, null: false
   end
 
 end

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getEntries, deleteEntry } from "../actions";
+import { getEntries, deleteEntry, updateEntry } from "../actions";
 import Entry from "./Entry";
 
 class Index extends Component {
@@ -18,10 +18,10 @@ class Index extends Component {
         {this.props.entries.map((entry) => (
           <div key={entry.id} className="col-md-4 mb-4">
             <Entry
-              title={entry.title}
-              content={entry.content}
-              didExercise={entry.did_exercise}
-              didRead={entry.did_read}
+              entry={entry}
+              onLike={() =>
+                this.props.updateEntry({ id: entry.id, likes: entry.likes + 1 })
+              }
               onDelete={() => this.props.deleteEntry(entry)}
             />
           </div>
@@ -40,6 +40,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   getEntries,
+  updateEntry,
   deleteEntry,
 };
 

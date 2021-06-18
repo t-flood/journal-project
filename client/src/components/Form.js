@@ -9,7 +9,6 @@ class Form extends Component {
     content: "",
     didExercise: false,
     didRead: false,
-    date: "",
   };
 
   handleInputChange = (e) => {
