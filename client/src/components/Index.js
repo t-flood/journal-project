@@ -20,7 +20,7 @@ class Index extends Component {
             <Entry
               entry={entry}
               onLike={() =>
-                this.props.updateEntry({ id: entry.id, likes: entry.likes + 1 })
+                this.props.updateEntry(entry.id, { likes: entry.likes + 1 })
               }
               onDelete={() => this.props.deleteEntry(entry)}
             />

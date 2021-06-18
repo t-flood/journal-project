@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Entry extends Component {
   //event handler for edit
@@ -38,7 +39,9 @@ class Entry extends Component {
               Read
             </label>
           </div>
-          <button className="btn btn-warning">Edit</button>
+          <Link to={`/entries/${entry.id}/edit`} className="btn btn-warning">
+            Edit
+          </Link>
           <button className="btn btn-danger" onClick={onDelete}>
             Delete
           </button>

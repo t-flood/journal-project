@@ -7,6 +7,14 @@ export const getEntries = () => {
   };
 };
 
+export const getEntry = (id) => {
+  return async (dispatch) => {
+    const response = await fetch(`/entries/${id}`);
+    const entry = await response.json();
+    dispatch({ type: "GET_ENTRY", entry });
+  };
+};
+
 export const addEntry = (attributes, history) => {
   return async (dispatch) => {
     const response = await fetch("/entries", {
@@ -29,7 +37,7 @@ export const addEntry = (attributes, history) => {
   };
 };
 
-export const updateEntry = ({ id, ...attributes }) => {
+export const updateEntry = (id, attributes, history) => {
   return async (dispatch) => {
     const response = await fetch(`/entries/${id}`, {
       method: "PATCH",
@@ -41,6 +49,10 @@ export const updateEntry = ({ id, ...attributes }) => {
     });
     const entry = await response.json();
     dispatch({ type: "UPDATE_ENTRY", entry });
+
+    if (history) {
+      history.push("/entries");
+    }
   };
 };
 

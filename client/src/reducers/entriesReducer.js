@@ -3,6 +3,19 @@ const initialState = {
   loading: true,
 };
 
+function replace(entries, entry) {
+  const result = [...entries];
+  const index = entries.findIndex((e) => e.id === entry.id);
+
+  if (index === -1) {
+    result.push(entry);
+  } else {
+    result[index] = entry;
+  }
+
+  return result;
+}
+
 const entriesReducer = (state = initialState, action) => {
   switch (action.type) {
     case "LOADING":
@@ -16,18 +29,12 @@ const entriesReducer = (state = initialState, action) => {
         loading: false,
         entries: action.entries,
       };
+    case "GET_ENTRY":
     case "ADD_ENTRY":
-      return {
-        ...state,
-        entries: [...state.entries, action.entry],
-      };
-    // an action for updating an entry?
     case "UPDATE_ENTRY":
       return {
         ...state,
-        entries: state.entries.map((entry) =>
-          entry.id === action.entry.id ? action.entry : entry
-        ),
+        entries: replace(state.entries, action.entry),
       };
     case "DELETE_ENTRY":
       return {
