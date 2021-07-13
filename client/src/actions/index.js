@@ -45,7 +45,13 @@ export const updateEntry = (id, attributes, history) => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(attributes),
+      body: JSON.stringify({
+        title: attributes.title,
+        content: attributes.content,
+        did_exercise: attributes.didExercise,
+        did_read: attributes.didRead,
+        likes: attributes.likes,
+      }),
     });
     const entry = await response.json();
     dispatch({ type: "UPDATE_ENTRY", entry });

@@ -26,7 +26,7 @@ export class EditEntry extends Component {
         initialValues={{
           title: entry.title,
           content: entry.content,
-          didEdit: entry.did_edit,
+          didExercise: entry.did_exercise,
           didRead: entry.did_read,
         }}
         onSubmit={this.handleSubmit}

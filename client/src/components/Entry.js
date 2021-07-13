@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 class Entry extends Component {
-  //event handler for edit
-  //pass props to form component
-
   render() {
     const { entry, onDelete, onLike } = this.props;
 
