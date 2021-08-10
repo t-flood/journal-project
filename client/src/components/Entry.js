@@ -39,17 +39,17 @@ class Entry extends Component {
           <div className="btn-toolbar">
             <Link
               to={`/entries/${entry.id}/edit`}
-              className="btn mt-1 btn-warning"
+              className="btn mt-2 btn-warning"
             >
               Edit
             </Link>
             <button
-              className="btn mr-1 ml-1 mt-1 btn-danger"
+              className="btn mr-2 ml-2 mt-2 btn-danger"
               onClick={onDelete}
             >
               Delete
             </button>
-            <button className="btn mr-1 mt-1 btn-info" onClick={onLike}>
+            <button className="btn mr-2 mt-2 btn-info" onClick={onLike}>
               {entry.likes} Likes
             </button>
           </div>
