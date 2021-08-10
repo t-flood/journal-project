@@ -36,15 +36,23 @@ class Entry extends Component {
               Read
             </label>
           </div>
-          <Link to={`/entries/${entry.id}/edit`} className="btn btn-warning">
-            Edit
-          </Link>
-          <button className="btn btn-danger" onClick={onDelete}>
-            Delete
-          </button>
-          <button className="btn btn-info" onClick={onLike}>
-            {entry.likes} Likes
-          </button>
+          <div className="btn-toolbar">
+            <Link
+              to={`/entries/${entry.id}/edit`}
+              className="btn mt-1 btn-warning"
+            >
+              Edit
+            </Link>
+            <button
+              className="btn mr-1 ml-1 mt-1 btn-danger"
+              onClick={onDelete}
+            >
+              Delete
+            </button>
+            <button className="btn mr-1 mt-1 btn-info" onClick={onLike}>
+              {entry.likes} Likes
+            </button>
+          </div>
         </div>
       </div>
     );
