@@ -25,7 +25,7 @@ export default class Form extends Component {
     return (
       <div>
         <div className="col-md-4 mb-4">
-          <h3>{this.props.title}</h3>
+          <h3 className="mt-3">{this.props.title}</h3>
         </div>
         <form onSubmit={this.handleSubmit}>
           <div className="col-md-4 mb-4">
@@ -81,7 +81,7 @@ export default class Form extends Component {
               </label>
             </div>
             <div>
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn mt-2 btn-primary">
                 Create Entry
               </button>
             </div>

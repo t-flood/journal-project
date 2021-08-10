@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Footer extends Component {
   render() {
-    return <div>&copy; Tim Flood 2021</div>;
+    return <div className="ml-2">&copy; Tim Flood 2021</div>;
   }
 }
 
